@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>I'm Sorry My princess</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+    body {
+      font-family: 'Handlee', cursive;
+      background: url('heart-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      background: linear-gradient(135deg, #fff0f5, #ffe6f0);
+      border-radius: 30px;
+      border: 4px dashed #ffb6c1;
+      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4), 0 0 20px rgba(255, 182, 193, 0.5) inset;
+      padding: 40px;
+      max-width: 600px;
+      position: relative;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      animation: sparkleGlow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes sparkleGlow {
+      0% {
+        box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4), 0 0 15px rgba(255, 182, 193, 0.5) inset;
+      }
+      100% {
+        box-shadow: 0 8px 30px rgba(255, 105, 180, 0.6), 0 0 25px rgba(255, 182, 193, 0.8) inset;
+      }
+    }
+
+    h1 {
+      color: #ff6b6b;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    p {
+      color: #555;
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .emoji {
+      font-size: 60px;
+      margin: 20px 0;
+      display: inline-block;
+      animation: bounce 2s infinite;
+    }
+
+    .pleading-emoji {
+      font-size: 40px;
+      margin: 0 5px;
+      animation: pulse 1.5s infinite;
+    }
+
+    .bear-img {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 20px;
+      background-image: url('sad bear.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 20px;
+      animation: sway 3s infinite;
+    }
+
+    .btn {
+      background-color: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .btn:hover {
+      background-color: #ff8e8e;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes sway {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(3deg); }
+    }
+
+    .floating-emoji {
+      position: absolute;
+      font-size: 28px;
+      animation: floatEmoji 6s infinite ease-in-out;
+      opacity: 0;
+      z-index: 1;
+    }
+
+    @keyframes floatEmoji {
+      0% { transform: translateY(0) rotate(-10deg); opacity: 0; }
+      20% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { transform: translateY(-120px) rotate(10deg); opacity: 0; }
+    }
+
+    .floating-text {
+      position: absolute;
+      color: #ff6b6b;
+      font-size: 24px;
+      font-weight: bold;
+      animation: floatEmoji 5s ease-in-out;
+      opacity: 0;
+      z-index: 1;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>I am so sorry my princess i made u feel like that from next time on i wont ever do it and i wil prove it hrough my actions i love u so much my dear princess and i am very sorry for the things i did :<<span class="pleading-emoji">😭</span><span class="pleading-emoji">😭</span></h1>
+
+    <div class="bear-img"></div>
+
+    <div class="emoji">😭😭</div>
+
+    <p>I didn't meann to do it nor will i ever let the past things happen my love.<br>
+    You are my princess and i will never ever neglect my princess nor make u feel alone ever again my love<br>
+    Will u please forgive this idiot teddy of urs :<</p>
+
+    <button class="btn" onclick="forgiveMe()">Accept My Apology</button>
+  </div>
+
+  <script>
+    function createFloatingEmoji() {
+      const emojis = ['🥺', '🥹', '💓', '💝', '💖', '💗', '💕', '🤍', '🩷', '💞'];
+      const emoji = document.createElement('div');
+      emoji.className = 'floating-emoji';
+      emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      emoji.style.left = Math.random() * 100 + 'vw';
+      emoji.style.top = (Math.random() * 40 + 60) + 'vh';
+      emoji.style.animationDuration = (3 + Math.random() * 4) + 's';
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 8000);
+    }
+
+    function forgiveMe() {
+      alert('Thank you for understanding! I promise to stay awake next time! 🥺🥹😭😭😭');
+      document.querySelector('.emoji').textContent = '🥺🥹😭😭😭';
+      document.querySelector('.emoji').style.animation = 'none';
+      document.querySelector('.emoji').style.transform = 'scale(1.5)';
+
+      const pleadingEmojis = document.querySelectorAll('.pleading-emoji');
+      pleadingEmojis[0].textContent = '🥺';
+      pleadingEmojis[1].textContent = '😭';
+
+      setTimeout(() => {
+        document.querySelector('.emoji').style.transform = 'scale(1)';
+      }, 500);
+
+      for (let i = 0; i < 20; i++) {
+        setTimeout(() => {
+          const heart = document.createElement('div');
+          heart.className = 'floating-text';
+          heart.textContent = '💖';
+          heart.style.left = '50%';
+          heart.style.top = '60%';
+          heart.style.animation = 'floatEmoji 3s ease-out forwards';
+          document.body.appendChild(heart);
+          setTimeout(() => heart.remove(), 3000);
+        }, i * 100);
+      }
+    }
+
+    setInterval(createFloatingEmoji, 1000);
+  </script>
+</body>
+</html>
